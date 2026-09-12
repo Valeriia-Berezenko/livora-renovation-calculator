@@ -53,14 +53,8 @@ export function QuoteDialog({ open, onClose, estimate }: QuoteDialogProps) {
       estimate.extras.length > 0 ? estimate.extras.map((line) => line.label).join(", ") : "Brak";
 
     const message = [
-      "DANE KLIENTA:",
-      `Imię: ${name}`,
-      `E-mail: ${email}`,
-      `Telefon: ${phone}`,
-      city ? `Miasto: ${city}` : null,
-      note ? `Wiadomość: ${note}` : null,
-      "",
       "DANE Z KALKULATORA:",
+      city ? `Miasto: ${city}` : null,
       `Powierzchnia mieszkania: ${formatArea(estimate.area)}`,
       `Liczba pokoi: ${estimate.rooms.name}`,
       `Liczba łazienek: ${estimate.baths.name}`,
@@ -69,6 +63,7 @@ export function QuoteDialog({ open, onClose, estimate }: QuoteDialogProps) {
       `Wybrane prace dodatkowe: ${extras}`,
       `Szacowany koszt remontu: ${formatRange(estimate.totalLow, estimate.totalHigh)}`,
       `Szacowany czas realizacji: ${estimate.weeksMin}–${estimate.weeksMax} tygodni`,
+      note ? `Wiadomość klienta: ${note}` : null,
     ]
       .filter((line) => line !== null)
       .join("\n");
