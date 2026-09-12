@@ -5,7 +5,6 @@ import { useCalculator } from "@/lib/store";
 export function StandardStep() {
   const standardId = useCalculator((s) => s.standardId);
   const setStandard = useCalculator((s) => s.setStandard);
-  const next = useCalculator((s) => s.next);
 
   return (
     <div>
@@ -19,10 +18,7 @@ export function StandardStep() {
           <OptionCard
             key={item.id}
             selected={standardId === item.id}
-            onSelect={() => {
-              setStandard(item.id);
-              window.setTimeout(() => next(), 180);
-            }}
+            onSelect={() => setStandard(item.id)}
             title={item.name}
             description={item.blurb}
             badge={item.id === "standard" ? "Polecany" : undefined}

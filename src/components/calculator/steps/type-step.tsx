@@ -6,7 +6,6 @@ import { useCalculator } from "@/lib/store";
 export function TypeStep() {
   const renovationId = useCalculator((s) => s.renovationId);
   const setRenovation = useCalculator((s) => s.setRenovation);
-  const next = useCalculator((s) => s.next);
 
   return (
     <div>
@@ -20,10 +19,7 @@ export function TypeStep() {
           <OptionCard
             key={item.id}
             selected={renovationId === item.id}
-            onSelect={() => {
-              setRenovation(item.id);
-              window.setTimeout(() => next(), 180);
-            }}
+            onSelect={() => setRenovation(item.id)}
             title={item.name}
             description={item.blurb}
             badge={item.id === "standard" ? "Najczęściej" : undefined}

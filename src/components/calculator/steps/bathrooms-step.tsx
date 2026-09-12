@@ -6,7 +6,6 @@ import { useCalculator } from "@/lib/store";
 export function BathroomsStep() {
   const bathId = useCalculator((s) => s.bathId);
   const setBath = useCalculator((s) => s.setBath);
-  const next = useCalculator((s) => s.next);
 
   return (
     <div>
@@ -20,10 +19,7 @@ export function BathroomsStep() {
           <OptionCard
             key={bath.id}
             selected={bathId === bath.id}
-            onSelect={() => {
-              setBath(bath.id);
-              window.setTimeout(() => next(), 180);
-            }}
+            onSelect={() => setBath(bath.id)}
             icon={Bath}
             title={bath.name}
           />

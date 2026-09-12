@@ -5,7 +5,6 @@ import { useCalculator } from "@/lib/store";
 export function RoomsStep() {
   const roomId = useCalculator((s) => s.roomId);
   const setRoom = useCalculator((s) => s.setRoom);
-  const next = useCalculator((s) => s.next);
 
   return (
     <div>
@@ -19,10 +18,7 @@ export function RoomsStep() {
           <OptionCard
             key={room.id}
             selected={roomId === room.id}
-            onSelect={() => {
-              setRoom(room.id);
-              window.setTimeout(() => next(), 180);
-            }}
+            onSelect={() => setRoom(room.id)}
             title={room.name}
             description={room.id === "5plus" ? "Duże mieszkanie, więcej stolarki i wykończeń." : undefined}
           />
