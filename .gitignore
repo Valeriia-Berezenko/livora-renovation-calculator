@@ -1,0 +1,26 @@
+node_modules
+dist
+.output
+.vinxi
+.tanstack
+.vercel
+.nitro
+.cache
+coverage
+
+.env
+.env.*
+!.env.example
+
+*.log
+.DS_Store
+Thumbs.db
+
+# Local sandbox / preview artifacts
+.grok
+.project_id
+.node_modules.lock
+screenshots
+artifacts
+startup.sh
+AGENTS.md
